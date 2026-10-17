@@ -242,6 +242,9 @@ footer .script{display:block;margin-bottom:.5rem}
 </head>
 <body>
 
+<!-- Reproductor de audio oculto para 'perfect.mp3' -->
+<audio id="bgMusic" src="perfect.mp3" loop></audio>
+
 <!-- HERO / INICIO -->
 <header class="hero">
   <img src="flor_1.png" alt="Flores decorativas izquierda" class="img-flower hero-flower left">
@@ -254,7 +257,7 @@ footer .script{display:block;margin-bottom:.5rem}
     </div>
 
     <div class="bless-container">
-      <span class="bless-subtitle">Y el Santo Bautizo de nuestra hija</span>
+      <span class="bless-subtitle">Y el Santo Bautizo de nossa hija</span>
       <span class="bless-name">Ailany Mavie</span>
     </div>
     
@@ -265,7 +268,8 @@ footer .script{display:block;margin-bottom:.5rem}
     </div>
     
     <p class="date">Sábado 05 · Diciembre · 2026</p>
-    <a href="#contador" class="btn">Ver invitación</a>
+    <!-- Botón con la función para reproducir 'perfect.mp3' y hacer scroll -->
+    <a href="#contador" class="btn" onclick="playMusic(event)">Ver invitación</a>
   </div>
 </header>
 
@@ -286,7 +290,7 @@ footer .script{display:block;margin-bottom:.5rem}
 
     <!-- Mensaje Emotivo debajo de la cuenta regresiva -->
     <p class="heartfelt-quote">
-      "Es un verdadero honor e inmensa alegría invitarte a compartir con nosotros este día tan especial en nuestras vidas: la unión de nuestro amor en Boda Religiosa y el bendito Santo Bautizo de nuestra amada hija Ailany Mavie."
+      "Es un verdadero honor e inmensa alegría invitarte a compartir con nosotros este día tan especial en nuestras vidas: la unión de nuestro amor en Boda y el bendito Santo Bautizo de nuestra amada hija Ailany Mavie."
     </p>
   </div>
 </section>
@@ -373,6 +377,21 @@ footer .script{display:block;margin-bottom:.5rem}
 </footer>
 
 <script>
+// Función para reproducir el archivo 'perfect.mp3' al presionar el botón
+function playMusic(event) {
+  event.preventDefault();
+  const music = document.getElementById('bgMusic');
+  
+  music.play().catch(error => {
+    console.log("Reproducción automática bloqueada por el navegador: ", error);
+  });
+
+  const target = document.querySelector('#contador');
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 // Fecha objetivo: 5 de Diciembre de 2026 a las 12:00 PM
 const targetDate = new Date(2026, 11, 5, 12, 0, 0).getTime();
 const $ = id => document.getElementById(id);
