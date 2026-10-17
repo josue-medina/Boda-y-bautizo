@@ -59,30 +59,21 @@ section{position:relative;z-index:1;padding:clamp(3.5rem,8vw,6.5rem) 1.25rem;tex
 
 /* Estilo específico para flor_1.png (Portada) */
 .hero-flower{
-  width:clamp(420px, 75vw, 840px);
+  width:clamp(294px, 52.5vw, 588px);
   opacity:.92;
-  transform:none;
+  top:50%;
+  transform:translateY(-50%);
 }
-.hero-flower.top{
-  top:0;
+.hero-flower.left{
   left:0;
-  -webkit-mask-image:linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,.5) 60%, rgba(0,0,0,0) 100%),
-                     linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.6) 60%, rgba(0,0,0,0) 100%);
-  mask-image:linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,.5) 60%, rgba(0,0,0,0) 100%),
-             linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.6) 60%, rgba(0,0,0,0) 100%);
-  -webkit-mask-composite: destination-in;
-  mask-composite: intersect;
+  -webkit-mask-image:linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,.5) 65%, rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,.5) 65%, rgba(0,0,0,0) 100%);
 }
-.hero-flower.bottom{
-  bottom:0;
+.hero-flower.right{
   right:0;
-  transform:scaleX(-1);
-  -webkit-mask-image:linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,.5) 60%, rgba(0,0,0,0) 100%),
-                     linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.6) 60%, rgba(0,0,0,0) 100%);
-  mask-image:linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,.5) 60%, rgba(0,0,0,0) 100%),
-             linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,.6) 60%, rgba(0,0,0,0) 100%);
-  -webkit-mask-composite: destination-in;
-  mask-composite: intersect;
+  transform:translateY(-50%) scaleX(-1);
+  -webkit-mask-image:linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,.5) 65%, rgba(0,0,0,0) 100%);
+  mask-image:linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,.5) 65%, rgba(0,0,0,0) 100%);
 }
 
 /* Estilo específico para flor_2.png (Secciones de Boda y Bautizo) */
@@ -131,9 +122,9 @@ p{font-size:clamp(.95rem,2.5vw,1.05rem);color:var(--text)}
   position:relative;
   overflow:hidden;
 }
-.hero .pre{letter-spacing:.3em;text-transform:uppercase;font-size:.75rem;color:var(--gold);margin-bottom:1.5rem}
+.hero .pre{letter-spacing:.3em;text-transform:uppercase;font-size:.75rem;color:var(--gold);margin-bottom:1.5rem;text-align:center;width:100%}
 .hero .names{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.4em}
-.hero .date{margin-top:1.5rem;letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;color:var(--text-soft)}
+.hero .date{margin-top:1.5rem;letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;color:var(--text-soft);text-align:center;width:100%}
 
 /* Anuncio del bautizo */
 .hero .bless-container{
@@ -219,9 +210,9 @@ footer .script{display:block;margin-bottom:.5rem}
 
 <!-- HERO / INICIO -->
 <header class="hero">
-  <!-- flor_1.png centrada arriba y abajo -->
-  <img src="flor_1.png" alt="Flores blancas centro superior" class="img-flower hero-flower top">
-  <img src="flor_1.png" alt="Flores blancas centro inferior" class="img-flower hero-flower bottom">
+  <!-- flor_1.png izquierda y derecha -->
+  <img src="flor_1.png" alt="Flores blancas izquierda" class="img-flower hero-flower left">
+  <img src="flor_1.png" alt="Flores blancas derecha" class="img-flower hero-flower right">
 
   <div class="container">
     <p class="pre">Con la bendición de Dios</p>
